@@ -22,6 +22,33 @@
             </nav>
         </header>
 
+        <!-- start card -->
+        <main>
+            <div class="container"  style="width: 60%;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                        <li class="breadcrumb-item"><a href="/produtos">Produtos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"> <span th:text="${produtos.titulo}"></span> </li>
+                    </ol>
+                </nav>
+                <article>
+
+                    <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${produtos.titulo}"></span></h1>
+                    <p class="card-subtitle mb-2 text-muted">
+                        <i class="material-icons">person_outline</i>
+                        <span th:text="${produtos.fabricante}"></span>
+                        <br>
+                        <img th:src="${produtos.img}" class="card-img-top" alt="..."> <br><br>
+                    <h1> <span th:text="${produtos.custo}"></span> </h1> <br>
+                        <a href="#" class="btn btn-primary" role="button"><span class="material-icons"> add_shopping_cart </span>Adicionar ao carrinho</a>
+                    </p>
+                    <section>
+                        <p class="card-text" style="margin-top: 40px;"><span th:utext="${produtos.descricao}"></span></p>
+                    </section>
+                </article>
+            </div>
+        </main>
+        <!-- end card -->
 
     </body>
 </html>
