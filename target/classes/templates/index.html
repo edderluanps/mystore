@@ -1,1 +1,87 @@
-hello from index
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>MyStore</title>
+        <!--Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!--CSS INTERNO-->
+        <style>
+
+            .menu{
+                background: #0d0d0d; 
+                height: 3rem;
+            }
+
+            .itens{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .itens a{
+                font-size: 20px;
+                font-family: sans-serif;
+                padding: 10px;
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .itens a:hover{
+                color: #3366ff;
+            }
+
+            .content{
+                background: #fff; 
+                height: 40rem;
+            }
+
+            footer{
+                background: #0d0d0d; 
+                height: 15rem;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <span class="material-icons">shopping_cart</span>
+                        MyStore
+                    </a>
+                    <a href="#" class="btn btn-primary" role="button">Login</a>
+                </div>
+            </nav>
+
+            <div class="carrossel">
+
+            </div>
+
+            <div class="menu">
+                <div class="itens">
+                    <a href="/"> Home </a>
+                    <a th:href="@{'/produtos/'}"> Produtos </a>
+                    <a href=""> Marcas </a>
+                    <a href="#footer"> Suporte </a>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="content">
+
+        </div>
+
+        <footer id="footer">
+
+        </footer>
+    </body>
+
+</html>
