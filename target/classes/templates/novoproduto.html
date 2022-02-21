@@ -1,1 +1,66 @@
-hello from new prod
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>MyStore</title>
+        <!--Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/produtos">
+                        <span class="material-icons">shopping_cart</span>
+                        MyStore
+                    </a>
+                    <a href="/novoproduto" class="btn btn-primary" role="button">Novo Produto</a>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <div class="container"  style="width: 60%;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                        <li class="breadcrumb-item" aria-current="page"><a href="/produtos">Produtos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Novo Produto</li>
+                    </ol>
+                </nav>
+                
+                <!-- Form Start -->
+                <div>
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="titulo" placeholder="Título *">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="fabricante" placeholder="Fabricante *">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="img" placeholder="Img url *">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="custo" placeholder="Custo *">
+                        </div>
+
+                        <textarea id="summernote" type="text" class="form-control" name="descricao" placeholder="Descrição *"></textarea>
+
+                        <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Adicionar</button>
+                        <a href="/produtos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </body>
+</html>
