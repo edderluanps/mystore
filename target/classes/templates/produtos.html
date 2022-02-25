@@ -49,6 +49,10 @@
             align-items: center;
             justify-content: center;
         }
+        
+        section{
+            padding: 20px;
+        }
 
     </style>
     <body>
@@ -80,10 +84,9 @@
                         <li class="breadcrumb-item active" aria-current="page">Produtos</li>
                     </ol>
                 </nav>
-
                 <div class="row justify-content-center">
                     <!-- start card-->
-                    <div class="card" style="width: 18rem;" th:each="produto : ${produtos}">
+                    <div class="card" style="width: 12rem;" th:each="produto : ${produtos}">
                         <img th:src="${produto.img}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
@@ -98,6 +101,7 @@
                     </div>
                     <!-- end card-->
                 </div>
+               
             </div>
         </section>
 
