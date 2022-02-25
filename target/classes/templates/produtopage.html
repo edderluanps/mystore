@@ -8,30 +8,43 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     </head>
-    
+
     <style>
+
         footer{
             background: #0d0d0d; 
             height: 15rem;
         }
 
         footer h6{
-            padding-top: 8.5rem;
+            padding-top: 6.5rem;
             color: #fff;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
+
+        footer #social a{
+            padding: 10px;
+        }
+
+        footer #social{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
     </style>
-    
+
     <body>
 
         <header>
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/produtos">
-                        <span class="material-icons">shopping_cart</span>
+                    <a class="navbar-brand" href="/">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/shop.png"/>
                         MyStore
                     </a>
                     <a href="/novoproduto" class="btn btn-primary" role="button">Novo Produto</a>
@@ -72,7 +85,12 @@
     <footer id="footer">
 
         <h6> &COPY; <a href="http://github.com/edderluanps"> @edderluanps </a> - All rights Reserved </h6>
+        <div id="social">
 
+            <a href=""> <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/> </a>
+            <a href="#"> <img src="https://img.icons8.com/color/48/000000/youtube-play.png"/> </a>
+            <a href="#"> <img src="https://img.icons8.com/color/48/000000/github-2.png"/> </a>
+        </div>
     </footer>
 </html>
 

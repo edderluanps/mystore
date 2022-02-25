@@ -6,7 +6,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
         <!--CSS INTERNO-->
         <style>
 
@@ -23,9 +22,9 @@
             }
 
             .itens a{
-                font-size: 20px;
+                font-size: 1.2rem;
                 font-family: sans-serif;
-                padding: 10px;
+                padding: 0.7rem;
                 text-decoration: none;
                 color: #fff;
             }
@@ -35,18 +34,43 @@
             }
 
             .content{
-                background: #fff; 
-                height: 40rem;
+                color: #fff;
+                font-family: monospace bold;
+                background: url("https://besthqwallpapers.com/Uploads/16-10-2020/143949/blue-linear-hexagons-4k-hexagons-3d-texture-honeycomb-hexagons-patterns.jpg"); 
+                height: 50rem;
+            }
+
+            .content img{
+                width: 100%;
+            }
+
+            .content h1{
+                padding-top: 20rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
             }
 
             footer{
-                background: #0d0d0d; 
+                background: #000000; 
                 height: 15rem;
             }
 
             footer h6{
-                padding-top: 8.5rem;
+                padding-top: 6.5rem;
                 color: #fff;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer #social a{
+                padding: 1rem;
+            }
+
+            footer #social{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -59,35 +83,39 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
-                        <span class="material-icons">shopping_cart</span>
+                        <img src="https://img.icons8.com/ios-filled/50/000000/shop.png"/>
                         MyStore
                     </a>
-                    <a href="/" class="btn btn-primary" role="button">Login</a>
+                    <a href="/login" class="btn btn-primary" role="button">Login</a>
                 </div>
             </nav>
 
             <div class="menu">
                 <div class="itens">
                     <a href="/"> Home </a>
-                    <a th:href="@{'/produtos/'}"> Produtos </a>
+                    <a th:href="@{'/produtos'}"> Produtos </a>
                     <a href=""> Marcas </a>
                     <a href="#footer"> Suporte </a>
                 </div>
             </div>
         </header>
 
-
         <div class="content">
-
+            <h1> Hello World</h1>
         </div>
 
         <footer id="footer">
-            
+
             <h6> &COPY; <a href="http://github.com/edderluanps"> @edderluanps </a> - All rights Reserved </h6>
-            
+            <div id="social">
+
+                <a href=""> <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/> </a>
+                <a href="#"> <img src="https://img.icons8.com/color/48/000000/youtube-play.png"/> </a>
+                <a href="#"> <img src="https://img.icons8.com/color/48/000000/github-2.png"/> </a>
+            </div>
         </footer>
     </body>
 
