@@ -9,6 +9,22 @@
 
     </head>
     
+    <style>
+        footer{
+            background: #0d0d0d; 
+            height: 15rem;
+        }
+
+        footer h6{
+            padding-top: 8.5rem;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    
     <body>
 
         <header>
@@ -41,7 +57,7 @@
                         <br>
                         <img th:src="${produtos.img}" class="card-img-top" alt="..."> <br><br>
                     <h1> <span th:text="${produtos.custo}"></span> </h1> <br>
-                        <a href="#" class="btn btn-primary" role="button"><span class="material-icons"> add_shopping_cart </span>Adicionar ao carrinho</a>
+                    <a href="#" class="btn btn-primary" role="button"><span class="material-icons"> add_shopping_cart </span>Adicionar ao carrinho</a>
                     </p>
                     <section>
                         <p class="card-text" style="margin-top: 40px;"><span th:utext="${produtos.descricao}"></span></p>
@@ -52,5 +68,11 @@
         <!-- end card -->
 
     </body>
+
+    <footer id="footer">
+
+        <h6> &COPY; <a href="http://github.com/edderluanps"> @edderluanps </a> - All rights Reserved </h6>
+
+    </footer>
 </html>
 
