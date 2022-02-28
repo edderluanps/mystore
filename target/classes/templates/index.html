@@ -8,9 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!--CSS INTERNO-->
         <style>
-
             .menu{
-                background: #0d0d0d; 
                 height: 3rem;
             }
 
@@ -26,7 +24,7 @@
                 font-family: sans-serif;
                 padding: 0.7rem;
                 text-decoration: none;
-                color: #fff;
+                color: #000000;
             }
 
             .itens a:hover{
@@ -34,9 +32,9 @@
             }
 
             .content{
-                color: #fff;
-                font-family: monospace bold;
-                background: url("https://besthqwallpapers.com/Uploads/16-10-2020/143949/blue-linear-hexagons-4k-hexagons-3d-texture-honeycomb-hexagons-patterns.jpg"); 
+                color: #000000;
+                font-family: Andale Mono, monospace;
+                background: url("https://previews.123rf.com/images/vska/vska1610/vska161000031/66481237-abstract-hexagon-background-technology-polygonal-design-digital-futuristic-minimalism-vector.jpg"); 
                 height: 50rem;
             }
 
@@ -45,42 +43,35 @@
             }
 
             .content h1{
-                padding-top: 20rem;
+                padding-top: 10rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                font-size: 12rem;
+            }
+
+            .content p{
+                padding-top: 4rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
             }
 
             footer{
-                background: #000000; 
-                height: 15rem;
+                padding-left: 10rem;
+                background: #000000;
+                color: #f0f0f0;
             }
 
-            footer h6{
-                padding-top: 6.5rem;
+            footer a{
                 color: #fff;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-            }
-
-            footer #social a{
-                padding: 1rem;
-            }
-
-            footer #social{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
             }
 
         </style>
-
     </head>
-
     <body>
         <header>
             <nav class="navbar navbar-light bg-light">
@@ -89,34 +80,67 @@
                         <img src="https://img.icons8.com/ios-filled/50/000000/shop.png"/>
                         MyStore
                     </a>
+                    <div class="menu">
+                        <div class="itens">
+                            <a href="/"> Home </a>
+                            <a href="/produtos"> Produtos </a>
+                            <a href=""> Suporte </a>
+                            <a href="#footer"> Contato </a>
+                        </div>
+                    </div>
                     <a href="/login" class="btn btn-primary" role="button">Login</a>
                 </div>
             </nav>
-
-            <div class="menu">
-                <div class="itens">
-                    <a href="/"> Home </a>
-                    <a th:href="@{'/produtos'}"> Produtos </a>
-                    <a href=""> Marcas </a>
-                    <a href="#footer"> Suporte </a>
-                </div>
-            </div>
         </header>
-
         <div class="content">
             <h1> Hello World</h1>
+            <p>Welcome to MyStore<p> <br>
+            This website was created for study of Spring Boot and Thymeleaf lib.
         </div>
+        <div class="second-content">
+        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue pt-4">
+            <div class="container-fluid text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
 
-        <footer id="footer">
+                        <h5 class="text-uppercase">MyStore colaborations</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Mauris nisi ante, luctus at molestie vel, dapibus et felis. 
+                            <br>    Suspendisse rhoncus, lacus ullamcorper condimentum imperdiet, <br>  metus arcu iaculis dolor, nec cursus risus turpis vel neque. </p>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
 
-            <h6> &COPY; <a href="http://github.com/edderluanps"> @edderluanps </a> - All rights Reserved </h6>
-            <div id="social">
+                    <div class="col-md-3 mb-md-0 mb-3">
 
-                <a href=""> <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/> </a>
-                <a href="#"> <img src="https://img.icons8.com/color/48/000000/youtube-play.png"/> </a>
-                <a href="#"> <img src="https://img.icons8.com/color/48/000000/github-2.png"/> </a>
+                        <h5 class="text-uppercase">Scocial Networks</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#">Twitter</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <h5 class="text-uppercase">Media</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="#">Twitch</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center py-3">© 2022 Copyright:
+                <a href="https://github.com/edderluanps.com"> My Github</a>
             </div>
         </footer>
+        <!-- Footer -->
     </body>
-
 </html>

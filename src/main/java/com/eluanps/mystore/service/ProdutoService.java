@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProdutoService  {
-    
+public class ProdutoService {
+
     @Autowired
     ProdutoRepository produtoRepository;
 
@@ -23,10 +23,5 @@ public class ProdutoService  {
     public Produto save(Produto produto) {
         return produtoRepository.save(produto);
     }
-    
-   public void delete(Long id){
-        findById(id);
-        produtoRepository.deleteById(id);
-   }    
-    
+
 }
