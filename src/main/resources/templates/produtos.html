@@ -77,11 +77,11 @@
 
             nav ul li a{
                 color: #ff4321;
+                transition: all 0.3s ease;
             }
 
             nav ul li a:hover{
                 color: #000;
-                opacity: 0.8;
                 text-decoration: none;
             }
 
@@ -104,7 +104,7 @@
                 padding-bottom: 20px;
                 font-family: sans-serif;
             }
-            
+
             .home .title span{
                 color: #ff4321;
             }
@@ -252,12 +252,12 @@
                 <div class="home-content">
                     <div class="card" th:each="produto : ${produtos}">
                         <div class="box">
-                            <img th:src="${produto.img}" alt="">
-                            <p><span th:text="${produto.fabricante}"></span></p>
+                            <img th:src="${produto.img}" style="padding-bottom: 20px" alt="">
+                            <p><span th:text="${produto.fabricante}" style="color: #a1a1a1"></span></p>
                             <a th:href="@{'/produtos/' + ${produto.id}}" >
                                 <h1 class="card-title" ><span th:text="${produto.titulo}"></span></h1>
                             </a>
-                            <p><h3>RS <span th:text="${produto.custo}"></span> </h3></p>
+                            <p><h3>R$ <span th:text="${produto.custo}"></span> </h3></p>
                         </div>
                     </div>
 

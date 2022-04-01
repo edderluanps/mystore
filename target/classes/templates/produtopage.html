@@ -2,149 +2,275 @@
 <html xmlns:th="http://thymeleaf.org">
     <head>
         <title>MyStore</title>
+
         <!--Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <!--CSS INTERNO-->
-    <style>
-        .menu{
-            height: 3rem;
-        }
+        <!-- Boxicons -->
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!--CSS INTERNO-->
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        .itens{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
+            html {
+                box-sizing: border-box;
+                font-size: 70%;
+            }
 
-        .itens a{
-            font-size: 1.2rem;
-            font-family: sans-serif;
-            padding: 0.7rem;
-            text-decoration: none;
-            color: #000000;
-        }
+            body {
+                font-family: sans-serif;
+                font-size: 18px;
+                color: black;
+                background-color: whitesmoke;
+            }
 
-        .itens a:hover{
-            color: #3366ff;
-        }
+            img {
+                max-width: 100%;
+            }
 
-        .itens a:hover{
-            color: #3366ff;
-        }
+            .box {
+                max-width: 1824px;
+                margin: 0 auto;
+            }
 
-        .content{
-            background: url("https://previews.123rf.com/images/vska/vska1610/vska161000031/66481237-abstract-hexagon-background-technology-polygonal-design-digital-futuristic-minimalism-vector.jpg"); 
-            color: #000000;    
-        }
+            /*navbar*/
+            nav{
+                background: #dcdcdc;
+                height: 120px;
+                width: 100%;
+                margin: auto;
+                padding: 20px 20px 20px 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
 
-        .breadcrumb{
-            background: url("https://previews.123rf.com/images/vska/vska1610/vska161000031/66481237-abstract-hexagon-background-technology-polygonal-design-digital-futuristic-minimalism-vector.jpg"); 
-        }
+            nav .fa-box{
+                color: #ff4321;
+                font-size: 30px;
+            }
 
-        footer{
-            padding-left: 10rem;
-            background: #000000;
-            color: #f0f0f0;
-        }
+            nav .fa-box i{
+                align-content: center;
+                align-items: center;
+            }
 
-        footer a{
-            color: #fff;
-        }
+            nav .text{
+                color: #ff4321;
+            }
 
-    </style>
+            nav ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+            }
+
+            nav ul li a{
+                color: #ff4321;
+                transition: all 0.3s ease;
+            }
+
+            nav ul li a:hover{
+                color: #000;
+                text-decoration: none;
+            }
+
+            .produto-container{
+                background: #fff;
+                height: 100%;
+            }
+
+            .produto-container .breadcrumb{
+                background-color: #fff;
+                padding-left: 50px;
+            }
+
+            .produto-container .breadcrumb a{
+                color: #ff4321;
+            }
+
+            .produto-container .card-subtitle{
+                color: #a1a1a1;
+            }
+
+            .produto-container .container{
+                color: #000;
+                position: relative;
+                height: 100%;
+                width: calc(20% - 20px);
+                background: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 20px 25px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .produto-container .container img{
+                height: 300px;
+                width: 300px;
+            }
+
+            .produto-container .container .btn-carrinho{
+                padding-bottom: 50px;
+
+            }
+
+            .produto-container .container .btn-carrinho a{
+                display: inline-block;
+                background: #ff4321;
+                color: #fff;
+                font-size: 20px;
+                padding: 10px 30px;
+                margin-top: 25px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .produto-container .container .btn-carrinho a:hover{
+                background: #000;
+                color: #fff;
+            }
+
+            /*footer*/
+            .footer-dark {
+                padding:50px 0 0 22%;
+                color:#000;
+                background:#dcdcdc;
+            }
+
+            .footer-dark h3 {
+                margin-top:0;
+                margin-bottom:12px;
+                font-weight:bold;
+                font-size: 20px;
+            }
+
+            .footer-dark ul {
+                list-style:none;
+                line-height:1.6;
+                font-size: 16px;
+                margin-bottom:0;
+            }
+
+            .footer-dark ul a {
+                color: #ff4321;
+                text-decoration:none;
+            }
+
+            .footer-dark ul a:hover {
+                opacity:0.8;
+            }
+
+            .footer-dark .item.text {
+                margin-bottom:36px;
+            }
+
+            .footer-dark .item.text p {
+                opacity: 0.6;
+                margin-bottom: 0;
+            }
+
+            .footer-dark .copyright {
+                color: #000;
+                text-align: center;
+                padding: 100px 37% 30px 0;
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom:0;
+            }
+
+            @media (max-width:767px) {
+                .footer-dark .item:not(.social) {
+                    text-align:center;
+                    padding-bottom:20px;
+                }
+                .footer-dark .item.text {
+                    margin-bottom:0;
+                }
+            }
+
+        </style>
     <body>
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/shop.png"/>
-                        MyStore
-                    </a>
-                    <div class="menu">
-                        <div class="itens">
-                            <a href="/"> Home </a>
-                            <a href="/produtos"> Produtos </a>
-                            <a href=""> Suporte </a>
-                            <a href="#footer"> Contato </a>
-                        </div>
-                    </div>
-                    <a href="/novoproduto" class="btn btn-primary" role="button">Novo Produto</a>
-                </div>
+        <!-- Header -->
+        <section>
+            <nav>
+                <h2 class="text"><i class="fas fa-box"> </i> MyStore </h2>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/produtos">PRODUTOS</a></li>
+                    <li><a href="">CONTATO</a></li>
+                    <li><a href="/login">ÁREA PESSOAL</a></li>
+                </ul>
             </nav>
-        </header>
-        <div class="content">
-            <!-- start card -->
-            <main>
-                <div class="container" style="width: 60%;">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="background-color: #000000; padding-left: 0px;">
-                            <li class="breadcrumb-item"><a href="/produtos">Produtos</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"> <span th:text="${produtos.titulo}" style="color: #000000"></span> </li>
-                        </ol>
-                    </nav>
-                    <article>
-                        <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${produtos.titulo}"></span></h1>
-                        <p class="card-subtitle mb-2 text-muted">
-                            <i class="material-icons">person_outline</i>
-                            <span th:text="${produtos.fabricante}"></span>
-                            <br>
-                            <img th:src="${produtos.img}" class="card-img-top" alt="..."> <br><br>
-                        <h1> <span th:text="${produtos.custo}"></span> </h1> <br>
-                        <a href="#" class="btn btn-primary" role="button"><span class="material-icons"> add_shopping_cart </span>Adicionar ao carrinho</a> <br>
-                        <section>
-                            <p class="card-text" style="margin-top: 40px;"><span th:utext="${produtos.descricao}"></span></p>
-                        </section>
-                    </article>
-                </div>
-            </main>
-            <!-- end card -->
-        </div>
-    </body>
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
+        </section>
 
-                    <h5 class="text-uppercase">MyStore colaborations</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Mauris nisi ante, luctus at molestie vel, dapibus et felis. 
-                        <br>    Suspendisse rhoncus, lacus ullamcorper condimentum imperdiet, <br>  metus arcu iaculis dolor, nec cursus risus turpis vel neque. </p>
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
+        <!-- Home -->
+        <section class="produto-container">
 
-                <div class="col-md-3 mb-md-0 mb-3">
-
-                    <h5 class="text-uppercase">Scocial Networks</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#">Twitter</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Media</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">YouTube</a>
-                        </li>
-                        <li>
-                            <a href="#">Twitch</a>
-                        </li>
-                    </ul>
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/produtos">Produtos</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> <span th:text="${produtos.titulo}"></span> </li>
+            </ol>
+            <!-- produto conteudo -->
+            <div class="container">
+                <div class="card-prod"> 
+                    <img th:src="${produtos.img}" alt="..."> <br><br>   
+                    <h1 class="card-title"><span th:text="${produtos.titulo}"></span></h1>
+                    <p class="card-subtitle"><span th:text="${produtos.fabricante}"></span><br>
+                    <h1>R$ <span th:text="${produtos.custo}"></span> </h1> <br>
+                    <div class="btn-carrinho"> <a href=""> Adicionar ao carrinho </a> </div>
+                    <p class="card-text"><span th:utext="${produtos.descricao}"></span></p>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright text-center py-3">© 2022 Copyright:
-            <a href="https://github.com/edderluanps.com"> My Github</a>
-        </div>
-    </footer>
-    <!-- Footer -->
+        </section>
+
+        <!-- Footer -->
+        <section class="footer-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="#">Marcas</a></li>
+                            <li><a href="#">Produtos</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Sobre</h3>
+                        <ul>
+                            <li><a href="#">Empresa</a></li>
+                            <li><a href="#">Colaboradores</a></li>
+                            <li><a href="#">Grupo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Mídias sociais</h3>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">MyStore Inc. © 2022</p>
+            </div>
+        </section>
+
+        <!-- scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
