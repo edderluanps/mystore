@@ -2,159 +2,304 @@
 <html xmlns:th="http://thymeleaf.org">
     <head>
         <title>MyStore</title>
+
         <!--Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Boxicons -->
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!--CSS INTERNO-->
+        <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                box-sizing: border-box;
+                font-size: 70%;
+            }
+
+            body {
+                font-family: sans-serif;
+                font-size: 18px;
+                color: black;
+                background-color: whitesmoke;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .box {
+                max-width: 1824px;
+                margin: 0 auto;
+            }
+
+            /*navbar*/
+            nav{
+                background: #dcdcdc;
+                height: 120px;
+                width: 100%;
+                margin: auto;
+                padding: 20px 20px 20px 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            nav .fa-box{
+                color: #ff4321;
+                font-size: 30px;
+            }
+
+            nav .fa-box i{
+                align-content: center;
+                align-items: center;
+            }
+
+            nav .text{
+                color: #ff4321;
+            }
+
+            nav ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+            }
+
+            nav ul li a{
+                color: #ff4321;
+            }
+
+            nav ul li a:hover{
+                color: #000;
+                opacity: 0.8;
+                text-decoration: none;
+            }
+
+            /*home*/
+            .home{
+                font-family: sans-serif;
+                color: #000;
+                background: #fff;
+                height: 100%;
+            }
+
+            .home .title{
+                color: #000;
+                position: relative;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 500;
+                margin-bottom: 60px;
+                padding-top: 50px;
+                padding-bottom: 20px;
+                font-family: sans-serif;
+            }
+            
+            .home .title span{
+                color: #ff4321;
+            }
+
+            .home .home-content{
+                color: #000;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                padding-bottom: 40px;
+            }
+
+            .home .home-content .card{
+                position: relative;
+                height: 450px;
+                width: calc(20% - 20px);
+                background: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 20px 25px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .home .home-content .card:hover{
+                background: #f0f0f0;
+            }
+
+            .home .home-content .card:hover .box{
+                transform: scale(1.02);
+            }
+
+            .home .home-content .card img{
+                height: 220px;
+                width: 200px;
+            }
+
+            .home .home-content .card .box{
+                transition: all 0.3s ease;
+            }
+
+            .home .home-content .card .text{
+                font-size: 20px;
+                font-weight: 600;
+                margin: 10px 0 7px 0;
+            }
+
+            .home .home-content .card p{
+                text-align: center;
+            }
+
+            .home .home-content .card a{
+                text-decoration: none;
+                display: inline-block;
+                color: #000;
+                font-size: 18px;
+                margin-top: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .home .home-content .card a:hover{
+                color: #ff4321;
+            }
+
+            /*footer*/
+            .footer-dark {
+                padding:50px 0 0 22%;
+                color:#000;
+                background:#dcdcdc;
+            }
+
+            .footer-dark h3 {
+                margin-top:0;
+                margin-bottom:12px;
+                font-weight:bold;
+                font-size: 20px;
+            }
+
+            .footer-dark ul {
+                list-style:none;
+                line-height:1.6;
+                font-size: 16px;
+                margin-bottom:0;
+            }
+
+            .footer-dark ul a {
+                color: #ff4321;
+                text-decoration:none;
+            }
+
+            .footer-dark ul a:hover {
+                opacity:0.8;
+            }
+
+            .footer-dark .item.text {
+                margin-bottom:36px;
+            }
+
+            .footer-dark .item.text p {
+                opacity: 0.6;
+                margin-bottom: 0;
+            }
+
+            .footer-dark .copyright {
+                color: #000;
+                text-align: center;
+                padding: 100px 37% 30px 0;
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom:0;
+            }
+
+            @media (max-width:767px) {
+                .footer-dark .item:not(.social) {
+                    text-align:center;
+                    padding-bottom:20px;
+                }
+                .footer-dark .item.text {
+                    margin-bottom:0;
+                }
+            }
+
+        </style>
     </head>
-    <!--CSS INTERNO-->
-    <style>
-        .menu{
-            height: 3rem;
-        }
-
-        .itens{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .itens a{
-            font-size: 1.2rem;
-            font-family: sans-serif;
-            padding: 0.7rem;
-            text-decoration: none;
-            color: #000000;
-        }
-
-        .itens a:hover{
-            color: #3366ff;
-        }
-
-        .itens a:hover{
-            color: #3366ff;
-        }
-
-        .container{
-            width: 60%; 
-            padding-bottom: 30px;
-        }
-
-        .background{
-            background: url("https://previews.123rf.com/images/vska/vska1610/vska161000031/66481237-abstract-hexagon-background-technology-polygonal-design-digital-futuristic-minimalism-vector.jpg"); 
-            height: 40rem;
-        }
-
-        .breadcrumb{
-            background: url("https://previews.123rf.com/images/vska/vska1610/vska161000031/66481237-abstract-hexagon-background-technology-polygonal-design-digital-futuristic-minimalism-vector.jpg"); 
-            height: 11%;
-            width: 1%;
-        }
-
-        footer{
-            background: #000000;
-            color: #f0f0f0;
-            padding-left: 10rem;
-        }
-
-        footer a{
-            color: #fff;
-        }
-
-        section{
-            padding: 20px;
-        }
-        
-    </style>
     <body>
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/shop.png"/>
-                        MyStore
-                    </a>
-                    <div class="menu">
-                        <div class="itens">
-                            <a href="/"> Home </a>
-                            <a href="/produtos"> Produtos </a>
-                            <a href=""> Suporte </a>
-                            <a href="#footer"> Contato </a>
-                        </div>
-                    </div>
-                    <a href="/login" class="btn btn-primary" role="button">Login</a>
-                </div>
+        <!-- Header -->
+        <section>
+            <nav>
+                <h2 class="text"><i class="fas fa-box"> </i> MyStore </h2>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/produtos">PRODUTOS</a></li>
+                    <li><a href="#footer">CONTATO</a></li>
+                    <li><a href="/login">ÁREA PESSOAL</a></li>
+                </ul>
             </nav>
-        </header>
-        <section class="background">
-            <div class="container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb" style="background-color: #fff; padding-left: 0px;">
-                        <li class="breadcrumb-item active" aria-current="page" style="color: #000000">Produtos</li>
-                    </ol>
-                </nav>
-                <div class="row justify-content-center">
-                    <!-- start card-->
-                    <div class="card" style="width: 12rem;" th:each="produto : ${produtos}">
-                        <img th:src="${produto.img}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
-                                <span th:text="${produto.fabricante}"></span>
-                            </p>
+        </section>
+
+        <!-- Home -->
+        <section class="home" id="home">
+            <div class="container-home">
+                <h2 class="title">Nossos <span>Produtos</span></h2>
+
+                <div class="home-content">
+                    <div class="card" th:each="produto : ${produtos}">
+                        <div class="box">
+                            <img th:src="${produto.img}" alt="">
+                            <p><span th:text="${produto.fabricante}"></span></p>
                             <a th:href="@{'/produtos/' + ${produto.id}}" >
-                                <h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;"><span th:text="${produto.titulo}"></span></h4>
+                                <h1 class="card-title" ><span th:text="${produto.titulo}"></span></h1>
                             </a>
-                            <h3> <span th:text="${produto.custo}"></span> </h3>
-                            <p class="card-text"><span th:utext="${#strings.abbreviate(produto.descricao,200)} "></span></p><br>
+                            <p><h3>RS <span th:text="${produto.custo}"></span> </h3></p>
                         </div>
                     </div>
-                    <!-- end card-->
+
                 </div>
             </div>
         </section>
+
         <!-- Footer -->
-        <footer class="page-footer font-small blue pt-4">
-            <div class="container-fluid text-center text-md-left">
+        <section class="footer-dark">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-
-                        <h5 class="text-uppercase">MyStore colaborations</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Mauris nisi ante, luctus at molestie vel, dapibus et felis. 
-                            <br>    Suspendisse rhoncus, lacus ullamcorper condimentum imperdiet, <br>  metus arcu iaculis dolor, nec cursus risus turpis vel neque. </p>
-                    </div>
-                    <hr class="clearfix w-100 d-md-none pb-3">
-
-                    <div class="col-md-3 mb-md-0 mb-3">
-
-                        <h5 class="text-uppercase">Scocial Networks</h5>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">Instagram</a>
-                            </li>
-                            <li>
-                                <a href="#">Twitter</a>
-                            </li>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="#">Marcas</a></li>
+                            <li><a href="#">Produtos</a></li>
+                            <li><a href="#">Feedback</a></li>
                         </ul>
-
                     </div>
-                    <div class="col-md-3 mb-md-0 mb-3">
-                        <h5 class="text-uppercase">Media</h5>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">YouTube</a>
-                            </li>
-                            <li>
-                                <a href="#">Twitch</a>
-                            </li>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Sobre</h3>
+                        <ul>
+                            <li><a href="#">Empresa</a></li>
+                            <li><a href="#">Colaboradores</a></li>
+                            <li><a href="#">Grupo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Mídias sociais</h3>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">YouTube</a></li>
                         </ul>
                     </div>
                 </div>
+                <p class="copyright">MyStore Inc. © 2022</p>
             </div>
-            <div class="footer-copyright text-center py-3">© 2022 Copyright:
-                <a href="https://github.com/edderluanps.com"> My Github</a>
-            </div>
-        </footer>
-        <!-- Footer -->
+        </section>
+
+        <!-- scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
