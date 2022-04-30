@@ -15,7 +15,7 @@ Lojinha virtual com Springboot e Thymeleaf, desenvolvido para pratica.
 ## Banco de dados
 * MySQL
 
-## Instalação
+# Instalação
 
 1- Baixe o ZIP do projeto
 
