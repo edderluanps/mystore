@@ -1,60 +1,138 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-    <head>
-        <title>MyStore</title>
-        <!--Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/shop.png"/>
-                        MyStore
-                    </a>
-                    <a href="/novoproduto" class="btn btn-primary" role="button">Novo Produto</a>
-                </div>
-            </nav>
-        </header>
-        <section>
-            <div class="container"  style="width: 60%;">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-                        <li class="breadcrumb-item" aria-current="page"><a href="/produtos">Produtos</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"style="color: #000000;">Novo Produto</li>
-                    </ol>
-                </nav>
-                <!-- Form Start -->
-                <div>
-                    <form method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="titulo" placeholder="Título *">
-                        </div>
+    <title>MyStore</title>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="fabricante" placeholder="Fabricante *">
-                        </div>
+    <!--Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="img" placeholder="Img url *">
-                        </div>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="custo" placeholder="Custo *">
-                        </div>
+        html {
+            box-sizing: border-box;
+            font-size: 70%;
+        }
 
-                        <textarea id="summernote" type="text" class="form-control" name="descricao" placeholder="Descrição *"></textarea>
+        body {
+            font-family: sans-serif;
+            font-size: 18px;
+            color: black;
+            background-color: whitesmoke;
+        }
 
-                        <small class="form-text text-muted">(*) Campos obrigatórios</small>
+        /*navbar*/
+        nav{
+            background: #dcdcdc;
+            height: 120px;
+            width: 100%;
+            margin: auto;
+            padding: 20px 20px 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Adicionar</button>
-                        <a href="/produtos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-                    </form>
-                </div>
+        nav .fa-box{
+            color: #ff4321;
+            font-size: 30px;
+        }
+
+        nav .fa-box i{
+            align-content: center;
+            align-items: center;
+        }
+
+        nav .text{
+            color: #ff4321;
+        }
+
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav ul li a{
+            color: #ff4321;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover{
+            color: #000;
+            text-decoration: none;
+        }
+
+        /*container*/
+        .container .breadcrumb{
+            background: whitesmoke;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section>
+        <nav>
+            <h2 class="text"><i class="fas fa-box"></i> MyStore </h2>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/produtos">PRODUTOS</a></li>
+                <li><a href="">CONTATO</a></li>
+                <li><a href="/novoproduto">ÁREA PESSOAL</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- conteudo -->
+    <section>
+        <div class="container">
+
+            <div aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page"><a href="/produtos" style="color: #ff4321">Produtos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Novo Produto</li>
+                </ol>
             </div>
-        </section>
-    </body>
+            <!-- Form Start -->
+            <div>
+                <form method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="titulo" placeholder="Título *">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="fabricante" placeholder="Fabricante *">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="img" placeholder="Img url *">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="custo" placeholder="Custo *">
+                    </div>
+
+                    <textarea id="summernote" type="text" class="form-control" name="descricao" placeholder="Descrição *"></textarea>
+
+                    <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px; background:  #ff4321">Adicionar</button>
+                    <a href="/produtos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
 </html>

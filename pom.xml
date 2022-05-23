@@ -14,7 +14,7 @@
     <name>mystore</name>
     <description>Webstore with Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version></java.version>
     </properties>
     <dependencies>
         <dependency>

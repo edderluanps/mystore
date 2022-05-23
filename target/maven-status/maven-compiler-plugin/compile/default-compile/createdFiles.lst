@@ -1,2 +1,6 @@
-com\eluanps\mystore\entity\Produto.class
+com\eluanps\mystore\repository\ProdutoRepository.class
 com\eluanps\mystore\MystoreApplication.class
+com\eluanps\mystore\config\SecurityConfig.class
+com\eluanps\mystore\controller\ProdutoController.class
+com\eluanps\mystore\entity\Produto.class
+com\eluanps\mystore\service\ProdutoService.class
